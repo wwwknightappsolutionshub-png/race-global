@@ -40,15 +40,18 @@ export default buildConfig({
     client: {
       url: process.env.DATABASE_URL || 'file:./payload.db',
     },
-    // SQLite already has the live schema. Auto-push tries to CREATE INDEX
-    // statements that already exist and crashes the site.
-    push: false,
+    // Set PAYLOAD_DATABASE_PUSH=true on first deploy so SQLite tables are created.
+    // Leave unset/false once the DB exists (avoids duplicate-index crashes).
+    push: process.env.PAYLOAD_DATABASE_PUSH === 'true',
   }),
   sharp,
   plugins: [],
   async onInit(payload) {
     const generating = process.argv.some((arg) => arg.includes('generate'))
-    if (generating) return
+    const building =
+      process.env.NEXT_PHASE === 'phase-production-build' ||
+      process.argv.includes('build')
+    if (generating || building) return
     await seedIfEmpty(payload)
   },
 })

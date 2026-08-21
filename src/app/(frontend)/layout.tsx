@@ -5,6 +5,9 @@ import { SiteFooter } from '../../components/SiteFooter'
 import { getSite } from '../../lib/cms'
 import './styles.css'
 
+// CMS-backed pages must not prerender against an empty SQLite DB at build time.
+export const dynamic = 'force-dynamic'
+
 export async function generateMetadata(): Promise<Metadata> {
   const { settings } = await getSite()
   return {
