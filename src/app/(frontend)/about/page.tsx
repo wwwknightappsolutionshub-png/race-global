@@ -4,9 +4,18 @@ import { ValuesLedger } from '../../../components/ValuesLedger'
 import { ManifestStrip } from '../../../components/ManifestStrip'
 import { getSite } from '../../../lib/cms'
 import { mediaAlt, mediaUrl, splitParagraphs } from '../../../lib/media'
+import { buildPageMetadata, siteSeoContext } from '../../../lib/seo'
 
-export const metadata: Metadata = {
-  title: 'About | Race General Trading LLC',
+export async function generateMetadata(): Promise<Metadata> {
+  const { settings, copy } = await getSite()
+  return buildPageMetadata({
+    seo: copy.aboutSeo,
+    path: '/about',
+    fallbackTitle: 'About | Race General Trading LLC',
+    fallbackDescription: copy.aboutHeading || settings.seoDescription || settings.tagline || '',
+    fallbackImage: copy.aboutImage,
+    site: siteSeoContext(settings),
+  })
 }
 
 export default async function AboutPage() {

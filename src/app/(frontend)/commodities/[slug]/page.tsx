@@ -4,23 +4,36 @@ import { DossierFrame } from '../../../../components/DossierFrame'
 import { CargoCarousel } from '../../../../components/CargoCarousel'
 import { getCms, getSite } from '../../../../lib/cms'
 import { mediaAlt, mediaUrl, splitParagraphs } from '../../../../lib/media'
+import { buildPageMetadata, siteSeoContext } from '../../../../lib/seo'
 
 type Args = { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: Args): Promise<Metadata> {
   const { slug } = await params
+  const { settings } = await getSite()
   const payload = await getCms()
   const found = await payload.find({
     collection: 'commodities',
     where: { slug: { equals: slug } },
     limit: 1,
+    depth: 1,
   })
   const cargo = found.docs[0]
   if (!cargo) return { title: 'Commodity | Race General Trading LLC' }
-  return {
-    title: cargo.seoTitle || `${cargo.name} | Race General Trading LLC`,
-    description: cargo.seoDescription || cargo.tagline,
-  }
+
+  return buildPageMetadata({
+    seo: {
+      title: cargo.seoTitle,
+      description: cargo.seoDescription,
+      ogImage: cargo.seoOgImage || cargo.image,
+      noIndex: cargo.seoNoIndex,
+    },
+    path: `/commodities/${cargo.slug}`,
+    fallbackTitle: `${cargo.name} | Race General Trading LLC`,
+    fallbackDescription: cargo.tagline,
+    fallbackImage: cargo.image,
+    site: siteSeoContext(settings),
+  })
 }
 
 export default async function CommodityPage({ params }: Args) {

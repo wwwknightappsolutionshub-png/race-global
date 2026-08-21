@@ -3,9 +3,17 @@ import { DossierFrame } from '../../../components/DossierFrame'
 import { EnquiryForm } from '../../../components/EnquiryForm'
 import { getSite } from '../../../lib/cms'
 import { splitParagraphs } from '../../../lib/media'
+import { buildPageMetadata, siteSeoContext } from '../../../lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Contact | Race General Trading LLC',
+export async function generateMetadata(): Promise<Metadata> {
+  const { settings, copy } = await getSite()
+  return buildPageMetadata({
+    seo: copy.contactSeo,
+    path: '/contact',
+    fallbackTitle: 'Contact | Race General Trading LLC',
+    fallbackDescription: copy.contactBody || settings.seoDescription || settings.tagline || '',
+    site: siteSeoContext(settings),
+  })
 }
 
 export default async function ContactPage() {

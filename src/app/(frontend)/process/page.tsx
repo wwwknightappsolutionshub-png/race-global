@@ -2,9 +2,17 @@ import type { Metadata } from 'next'
 import { DossierFrame } from '../../../components/DossierFrame'
 import { ProcessGates } from '../../../components/ProcessGates'
 import { getSite } from '../../../lib/cms'
+import { buildPageMetadata, siteSeoContext } from '../../../lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Process | Race General Trading LLC',
+export async function generateMetadata(): Promise<Metadata> {
+  const { settings, copy } = await getSite()
+  return buildPageMetadata({
+    seo: copy.processSeo,
+    path: '/process',
+    fallbackTitle: 'Process | Race General Trading LLC',
+    fallbackDescription: copy.processIntro || settings.seoDescription || settings.tagline || '',
+    site: siteSeoContext(settings),
+  })
 }
 
 export default async function ProcessPage() {

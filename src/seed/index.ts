@@ -326,9 +326,12 @@ export async function seedIfEmpty(payload: Payload) {
       instagram: 'https://www.instagram.com/racegentrade',
       facebook: 'https://www.facebook.com/racegentrade',
       twitter: 'https://twitter.com/racegentrade',
+      siteUrl: 'https://racegeneraltrading.com',
       seoTitle: 'Race General Trading LLC | African commodities from Dubai',
       seoDescription:
         'Dubai-based Race General Trading LLC sources, exports, and supplies premium African agricultural commodities to buyers in the Middle East, Asia, and Europe.',
+      robotsAllowIndexing: true,
+      defaultOgImage: media.hub,
     },
     overrideAccess: true,
   })
@@ -395,6 +398,38 @@ export async function seedIfEmpty(payload: Payload) {
         "Whether you're looking for a dependable supplier, consistent product quality, or a trusted sourcing partner across Africa, Race General Trading is ready to support your business. Get in touch today to discuss your sourcing requirements.",
       privacyBody:
         'Race General Trading LLC collects only the information you submit through our enquiry form — company details, contact data, and sourcing requirements — so we can respond to your request. We do not sell personal data. To update or remove an enquiry, email contact@racegentrade.com.',
+      homeSeo: {
+        title: 'Race General Trading LLC | African commodities from Dubai',
+        description:
+          "Dubai-based Race General Trading LLC sources, exports, and supplies premium African agricultural commodities to buyers in the Middle East, Asia, and Europe.",
+      },
+      aboutSeo: {
+        title: 'About | Race General Trading LLC',
+        description: 'A sourcing partner, not a one-off shipment — integrity, reliability, and long-term trade partnerships.',
+      },
+      workSeo: {
+        title: 'What we do | Race General Trading LLC',
+        description:
+          'End-to-end agricultural commodity sourcing and export supply chain management from African origin through Dubai.',
+      },
+      commoditiesSeo: {
+        title: 'Commodities | Race General Trading LLC',
+        description:
+          'Avocado, citrus, habanero, coffee, herbs, maize flour, cassava flour, and beans sourced from trusted African origins.',
+      },
+      processSeo: {
+        title: 'Process | Race General Trading LLC',
+        description: 'Eight control gates from enquiry to delivery — specification, inspection, documents, and logistics.',
+      },
+      contactSeo: {
+        title: 'Contact | Race General Trading LLC',
+        description: 'Open a trade file with Race General Trading LLC for sourcing requirements and commodity enquiries.',
+      },
+      privacySeo: {
+        title: 'Privacy | Race General Trading LLC',
+        description: 'How Race General Trading LLC handles enquiry and contact data.',
+        noIndex: true,
+      },
     },
     overrideAccess: true,
   })

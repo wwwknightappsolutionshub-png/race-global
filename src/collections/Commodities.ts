@@ -79,12 +79,33 @@ export const Commodities: CollectionConfig = {
       defaultValue: 10,
     },
     {
-      name: 'seoTitle',
-      type: 'text',
-    },
-    {
-      name: 'seoDescription',
-      type: 'textarea',
+      type: 'collapsible',
+      label: 'SEO',
+      admin: { initCollapsed: true },
+      fields: [
+        {
+          name: 'seoTitle',
+          type: 'text',
+          admin: { description: 'Browser / Google title for this commodity page.' },
+        },
+        {
+          name: 'seoDescription',
+          type: 'textarea',
+          admin: { description: 'Meta description for this commodity page.' },
+        },
+        {
+          name: 'seoOgImage',
+          type: 'upload',
+          relationTo: 'media',
+          admin: { description: 'Social share image. Defaults to the commodity photo.' },
+        },
+        {
+          name: 'seoNoIndex',
+          type: 'checkbox',
+          defaultValue: false,
+          admin: { description: 'Ask search engines not to index this commodity.' },
+        },
+      ],
     },
   ],
 }

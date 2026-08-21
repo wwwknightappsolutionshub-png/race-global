@@ -2,9 +2,18 @@ import type { Metadata } from 'next'
 import { DossierFrame } from '../../../components/DossierFrame'
 import { getSite } from '../../../lib/cms'
 import { mediaAlt, mediaUrl, splitParagraphs } from '../../../lib/media'
+import { buildPageMetadata, siteSeoContext } from '../../../lib/seo'
 
-export const metadata: Metadata = {
-  title: 'What we do | Race General Trading LLC',
+export async function generateMetadata(): Promise<Metadata> {
+  const { settings, copy } = await getSite()
+  return buildPageMetadata({
+    seo: copy.workSeo,
+    path: '/what-we-do',
+    fallbackTitle: 'What we do | Race General Trading LLC',
+    fallbackDescription: copy.workIntro || settings.seoDescription || settings.tagline || '',
+    fallbackImage: copy.sourcingImage || copy.exportImage,
+    site: siteSeoContext(settings),
+  })
 }
 
 export default async function WhatWeDoPage() {

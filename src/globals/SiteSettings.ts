@@ -74,15 +74,39 @@ export const SiteSettings: GlobalConfig = {
           label: 'SEO',
           fields: [
             {
+              name: 'siteUrl',
+              type: 'text',
+              defaultValue: 'https://racegeneraltrading.com',
+              admin: {
+                description: 'Public site URL used for canonicals, sitemap, and Open Graph (include https://).',
+              },
+            },
+            {
               name: 'seoTitle',
               type: 'text',
               defaultValue: 'Race General Trading LLC | African commodities from Dubai',
+              admin: { description: 'Default site title when a page has no SEO title.' },
             },
             {
               name: 'seoDescription',
               type: 'textarea',
               defaultValue:
                 'Dubai-based Race General Trading LLC sources, exports, and supplies premium African agricultural commodities to buyers in the Middle East, Asia, and Europe.',
+              admin: { description: 'Default meta description when a page has no SEO description.' },
+            },
+            {
+              name: 'defaultOgImage',
+              type: 'upload',
+              relationTo: 'media',
+              admin: { description: 'Default social share image (1200×630 recommended).' },
+            },
+            {
+              name: 'robotsAllowIndexing',
+              type: 'checkbox',
+              defaultValue: true,
+              admin: {
+                description: 'If unchecked, robots.txt asks crawlers not to index the whole site.',
+              },
             },
           ],
         },

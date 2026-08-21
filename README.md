@@ -32,12 +32,22 @@ Change this in `.env` (`SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD`) before going 
 
 From `/admin` you can edit:
 
-- **Site settings** — name, tagline, phone, email, address, logo, SEO
-- **Page copy** — every public page’s text and hero photos
-- **Commodities** — add/remove cargos, photos, specs, order
+- **Site settings** — name, tagline, phone, email, address, logo, SEO defaults, site URL, default OG image
+- **Page copy** — every public page’s text and hero photos, plus a dedicated **SEO** tab (title, description, OG image, noindex per page)
+- **Commodities** — add/remove cargos, photos, specs, order, and per-item SEO
 - **Values, process gates, trade corridor** — reorder or rewrite
 - **Images** — replace any photo; the live site updates
 - **Enquiries** — inbound cargo requests from the contact form
+
+## SEO
+
+The live site emits:
+
+- CMS-driven title, description, canonical, Open Graph, and Twitter cards per page
+- Organization JSON-LD
+- `/sitemap.xml` and `/robots.txt`
+
+Edit SEO in **Site settings → SEO** (defaults) and **Page copy → SEO** (per page).
 
 ## Pages
 

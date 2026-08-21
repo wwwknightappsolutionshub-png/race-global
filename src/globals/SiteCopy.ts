@@ -1,4 +1,5 @@
 import type { GlobalConfig } from 'payload'
+import { seoGroupField } from '../fields/seo'
 
 export const SiteCopy: GlobalConfig = {
   slug: 'site-copy',
@@ -184,6 +185,18 @@ export const SiteCopy: GlobalConfig = {
               defaultValue:
                 'Race General Trading LLC collects only the information you submit through our enquiry form — company details, contact data, and sourcing requirements — so we can respond to your request. We do not sell personal data. To update or remove an enquiry, email contact@racegentrade.com.',
             },
+          ],
+        },
+        {
+          label: 'SEO',
+          fields: [
+            seoGroupField('homeSeo', 'Home'),
+            seoGroupField('aboutSeo', 'About'),
+            seoGroupField('workSeo', 'What we do'),
+            seoGroupField('commoditiesSeo', 'Commodities list'),
+            seoGroupField('processSeo', 'Process'),
+            seoGroupField('contactSeo', 'Contact'),
+            seoGroupField('privacySeo', 'Privacy'),
           ],
         },
       ],

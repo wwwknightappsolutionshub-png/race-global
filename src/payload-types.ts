@@ -235,8 +235,22 @@ export interface Commodity {
    */
   featured?: boolean | null;
   order: number;
+  /**
+   * Browser / Google title for this commodity page.
+   */
   seoTitle?: string | null;
+  /**
+   * Meta description for this commodity page.
+   */
   seoDescription?: string | null;
+  /**
+   * Social share image. Defaults to the commodity photo.
+   */
+  seoOgImage?: (number | null) | Media;
+  /**
+   * Ask search engines not to index this commodity.
+   */
+  seoNoIndex?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -485,6 +499,8 @@ export interface CommoditiesSelect<T extends boolean = true> {
   order?: T;
   seoTitle?: T;
   seoDescription?: T;
+  seoOgImage?: T;
+  seoNoIndex?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -612,8 +628,26 @@ export interface SiteSetting {
    * Full Twitter / X URL. Shown in the top bar and footer.
    */
   twitter?: string | null;
+  /**
+   * Public site URL used for canonicals, sitemap, and Open Graph (include https://).
+   */
+  siteUrl?: string | null;
+  /**
+   * Default site title when a page has no SEO title.
+   */
   seoTitle?: string | null;
+  /**
+   * Default meta description when a page has no SEO description.
+   */
   seoDescription?: string | null;
+  /**
+   * Default social share image (1200×630 recommended).
+   */
+  defaultOgImage?: (number | null) | Media;
+  /**
+   * If unchecked, robots.txt asks crawlers not to index the whole site.
+   */
+  robotsAllowIndexing?: boolean | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -685,6 +719,58 @@ export interface SiteCopy {
   contactHeading?: string | null;
   contactBody?: string | null;
   privacyBody?: string | null;
+  /**
+   * Search and social preview fields for this page. Leave blank to use site defaults.
+   */
+  homeSeo?: {
+    title?: string | null;
+    description?: string | null;
+    ogImage?: (number | null) | Media;
+    canonicalPath?: string | null;
+    noIndex?: boolean | null;
+  };
+  aboutSeo?: {
+    title?: string | null;
+    description?: string | null;
+    ogImage?: (number | null) | Media;
+    canonicalPath?: string | null;
+    noIndex?: boolean | null;
+  };
+  workSeo?: {
+    title?: string | null;
+    description?: string | null;
+    ogImage?: (number | null) | Media;
+    canonicalPath?: string | null;
+    noIndex?: boolean | null;
+  };
+  commoditiesSeo?: {
+    title?: string | null;
+    description?: string | null;
+    ogImage?: (number | null) | Media;
+    canonicalPath?: string | null;
+    noIndex?: boolean | null;
+  };
+  processSeo?: {
+    title?: string | null;
+    description?: string | null;
+    ogImage?: (number | null) | Media;
+    canonicalPath?: string | null;
+    noIndex?: boolean | null;
+  };
+  contactSeo?: {
+    title?: string | null;
+    description?: string | null;
+    ogImage?: (number | null) | Media;
+    canonicalPath?: string | null;
+    noIndex?: boolean | null;
+  };
+  privacySeo?: {
+    title?: string | null;
+    description?: string | null;
+    ogImage?: (number | null) | Media;
+    canonicalPath?: string | null;
+    noIndex?: boolean | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -705,8 +791,11 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   instagram?: T;
   facebook?: T;
   twitter?: T;
+  siteUrl?: T;
   seoTitle?: T;
   seoDescription?: T;
+  defaultOgImage?: T;
+  robotsAllowIndexing?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -761,6 +850,69 @@ export interface SiteCopySelect<T extends boolean = true> {
   contactHeading?: T;
   contactBody?: T;
   privacyBody?: T;
+  homeSeo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        ogImage?: T;
+        canonicalPath?: T;
+        noIndex?: T;
+      };
+  aboutSeo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        ogImage?: T;
+        canonicalPath?: T;
+        noIndex?: T;
+      };
+  workSeo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        ogImage?: T;
+        canonicalPath?: T;
+        noIndex?: T;
+      };
+  commoditiesSeo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        ogImage?: T;
+        canonicalPath?: T;
+        noIndex?: T;
+      };
+  processSeo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        ogImage?: T;
+        canonicalPath?: T;
+        noIndex?: T;
+      };
+  contactSeo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        ogImage?: T;
+        canonicalPath?: T;
+        noIndex?: T;
+      };
+  privacySeo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        ogImage?: T;
+        canonicalPath?: T;
+        noIndex?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
