@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { getSite } from '../../lib/cms'
-import { normalizeSiteUrl } from '../../lib/seo'
+import { getSite } from '../lib/cms'
+import { normalizeSiteUrl } from '../lib/seo'
 
 export const dynamic = 'force-dynamic'
 
