@@ -12,22 +12,28 @@ export type EnquiryMailPayload = {
   message: string
 }
 
+function env(name: string): string {
+  // Bracket access so Next does not inline these at build time.
+  const raw = process.env[name] || ''
+  return raw.trim().replace(/^['"]|['"]$/g, '')
+}
+
 function smtpConfigured(): boolean {
-  return Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS)
+  return Boolean(env('SMTP_HOST') && env('SMTP_USER') && env('SMTP_PASS'))
 }
 
 function createTransport() {
-  const port = Number(process.env.SMTP_PORT || 465)
-  const secure =
-    process.env.SMTP_SECURE === 'true' || process.env.SMTP_SECURE === '1' || port === 465
+  const port = Number(env('SMTP_PORT') || 465)
+  const secure = env('SMTP_SECURE') === 'true' || env('SMTP_SECURE') === '1' || port === 465
 
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
+    host: env('SMTP_HOST'),
     port,
     secure,
+    requireTLS: !secure && port === 587,
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+      user: env('SMTP_USER'),
+      pass: env('SMTP_PASS'),
     },
   })
 }
@@ -43,12 +49,8 @@ export async function sendEnquiryNotification(
     }
   }
 
-  const to =
-    process.env.ENQUIRY_NOTIFY_TO ||
-    notifyTo ||
-    process.env.SMTP_USER ||
-    'info@racegeneraltrading.com'
-  const from = process.env.SMTP_FROM || process.env.SMTP_USER || to
+  const to = env('ENQUIRY_NOTIFY_TO') || notifyTo || env('SMTP_USER') || 'info@racegeneraltrading.com'
+  const from = env('SMTP_FROM') || env('SMTP_USER') || to
 
   const lines = [
     'New trade enquiry from the website',
