@@ -36,7 +36,10 @@ export default async function ContactPage() {
           <p key={paragraph}>{paragraph}</p>
         ))}
       </div>
-      <EnquiryForm commodities={commodities.map((item) => ({ name: item.name }))} />
+      <EnquiryForm
+        commodities={commodities.map((item) => ({ name: item.name }))}
+        turnstileSiteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+      />
     </DossierFrame>
   )
 }

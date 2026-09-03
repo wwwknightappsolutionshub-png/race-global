@@ -8,12 +8,13 @@ export const Enquiries: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'company',
-    defaultColumns: ['company', 'commodityInterest', 'status', 'createdAt'],
-    description: 'Trade enquiries submitted from the public site.',
+    defaultColumns: ['company', 'email', 'commodityInterest', 'status', 'createdAt'],
+    description: 'Trade enquiries submitted from the public site. Public API create is disabled — only the contact form server action may create rows.',
   },
   access: {
     read: ({ req }) => Boolean(req.user),
-    create: () => true,
+    // Bots were posting straight to /api/enquiries. Creation is server-action only (overrideAccess).
+    create: () => false,
     update: ({ req }) => Boolean(req.user),
     delete: ({ req }) => Boolean(req.user),
   },
@@ -21,7 +22,15 @@ export const Enquiries: CollectionConfig = {
     { name: 'company', type: 'text', required: true },
     { name: 'contactName', type: 'text', required: true },
     { name: 'email', type: 'email', required: true },
-    { name: 'phone', type: 'text' },
+    { name: 'phone', type: 'text', required: true },
+    {
+      name: 'phoneNormalized',
+      type: 'text',
+      admin: {
+        readOnly: true,
+        description: 'E.164 phone used for duplicate detection.',
+      },
+    },
     { name: 'commodityInterest', type: 'text', required: true },
     { name: 'originPreference', type: 'text' },
     { name: 'volume', type: 'text' },
@@ -36,6 +45,22 @@ export const Enquiries: CollectionConfig = {
         { label: 'In progress', value: 'in-progress' },
         { label: 'Closed', value: 'closed' },
       ],
+    },
+    {
+      name: 'sourceIp',
+      type: 'text',
+      admin: {
+        readOnly: true,
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'userAgent',
+      type: 'text',
+      admin: {
+        readOnly: true,
+        position: 'sidebar',
+      },
     },
   ],
   timestamps: true,

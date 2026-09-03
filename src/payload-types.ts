@@ -308,13 +308,16 @@ export interface Enquiry {
   company: string;
   contactName: string;
   email: string;
-  phone?: string | null;
+  phone: string;
+  phoneNormalized?: string | null;
   commodityInterest: string;
   originPreference?: string | null;
   volume?: string | null;
   destination?: string | null;
   message: string;
   status?: ('new' | 'in-progress' | 'closed') | null;
+  sourceIp?: string | null;
+  userAgent?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -547,12 +550,15 @@ export interface EnquiriesSelect<T extends boolean = true> {
   contactName?: T;
   email?: T;
   phone?: T;
+  phoneNormalized?: T;
   commodityInterest?: T;
   originPreference?: T;
   volume?: T;
   destination?: T;
   message?: T;
   status?: T;
+  sourceIp?: T;
+  userAgent?: T;
   updatedAt?: T;
   createdAt?: T;
 }

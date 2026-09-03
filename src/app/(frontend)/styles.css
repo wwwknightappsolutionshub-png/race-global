@@ -1105,6 +1105,7 @@ p {
 }
 
 .enquiry {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -1137,6 +1138,15 @@ p {
   border-bottom: 1px solid var(--forest);
   background: transparent;
   color: var(--ink);
+}
+
+.enquiry-hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .enquiry-error {

@@ -39,6 +39,19 @@ From `/admin` you can edit:
 - **Images** — replace any photo; the live site updates
 - **Enquiries** — inbound cargo requests from the contact form
 
+## Enquiries & anti-spam
+
+The contact form:
+
+1. Stores the enquiry in **Enquiries** (`/admin`)
+2. Emails a copy to `ENQUIRY_NOTIFY_TO` (default: Hostinger inbox) via SMTP
+
+Public `POST /api/enquiries` is disabled. Submissions only go through the server action.
+
+Hardening includes: honeypot, minimum fill time, email MX + mailbox probe, disposable-domain block, required E.164 phone validation, 24-hour duplicate block on email/phone, per-IP rate limit, and optional Cloudflare Turnstile / Twilio Lookup.
+
+Set SMTP vars in `.env` (see `.env.example`). Without SMTP, enquiries still save in admin but will not appear in webmail.
+
 ## SEO
 
 The live site emits:
