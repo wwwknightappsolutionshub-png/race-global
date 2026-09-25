@@ -31,12 +31,11 @@ export function CargoBook({ items, kicker, heading, intro }: Props) {
       </header>
 
       <ol className="book-run">
-        {items.map((item, index) => {
+        {items.map((item) => {
           const src = mediaUrl(item.image, 'card')
           return (
             <li key={item.id}>
               <Link className="book-row" href={`/commodities/${item.slug}`}>
-                <span className="book-idx">C-{String(index + 1).padStart(2, '0')}</span>
                 <span className="book-shot">
                   {src ? (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -49,7 +48,6 @@ export function CargoBook({ items, kicker, heading, intro }: Props) {
                   <h2>{item.name}</h2>
                   <span>{item.tagline}</span>
                 </span>
-                <span className="book-open">Open dossier</span>
               </Link>
             </li>
           )

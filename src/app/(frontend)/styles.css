@@ -56,7 +56,6 @@ h3,
 .file-btn,
 .ledger-label,
 .manifest-role,
-.crate-index,
 .gate-seal,
 .corridor-stamp {
   font-family: var(--display);
@@ -405,7 +404,7 @@ p {
 
 .book-row {
   display: grid;
-  grid-template-columns: 88px 220px 1fr auto;
+  grid-template-columns: 220px 1fr;
   gap: 28px;
   align-items: center;
   text-decoration: none;
@@ -415,13 +414,6 @@ p {
 
 .book-run li:last-child .book-row {
   border-bottom: 1px solid var(--gold);
-}
-
-.book-idx {
-  font-family: var(--display);
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  color: var(--gold);
 }
 
 .book-shot,
@@ -459,23 +451,8 @@ p {
   font-size: 16px;
 }
 
-.book-open {
-  font-family: var(--display);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--forest);
-  white-space: nowrap;
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 4px;
-}
-
 .book-row:hover {
   background: color-mix(in srgb, var(--gold) 8%, transparent);
-}
-
-.book-row:hover .book-open {
-  color: var(--gold);
 }
 
 .intro-head-row {
@@ -726,16 +703,6 @@ p {
   width: 100%;
   height: 210px;
   object-fit: cover;
-}
-
-.crate-index {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 2;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  color: var(--gold);
 }
 
 .crate-copy {

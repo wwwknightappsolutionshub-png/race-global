@@ -38,7 +38,6 @@ export function CargoWall({ items, kicker, heading, intro }: Props) {
           return (
             <li key={item.id} className={`crate crate-${(index % 3) + 1}`}>
               <Link href={`/commodities/${item.slug}`}>
-                <span className="crate-index">C-{String(index + 1).padStart(2, '0')}</span>
                 {src ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={src} alt={mediaAlt(item.image, item.name)} />
