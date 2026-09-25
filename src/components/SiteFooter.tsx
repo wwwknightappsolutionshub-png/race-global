@@ -51,10 +51,11 @@ export function SiteFooter({
         <div>
           <p className="ledger-label">Explore</p>
           <nav>
-            <Link href="/about">About</Link>
-            <Link href="/what-we-do">What we do</Link>
             <Link href="/commodities">Commodities</Link>
+            <Link href="/what-we-do">What we do</Link>
             <Link href="/process">Process</Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
           </nav>
         </div>
 
