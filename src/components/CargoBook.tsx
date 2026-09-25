@@ -18,25 +18,25 @@ type Props = {
 
 export function CargoBook({ items, kicker, heading, intro }: Props) {
   return (
-    <section className="book">
-      <header className="book-head">
+    <section className="cargo-deck">
+      <header className="cargo-deck-mast">
         <p className="ledger-label">{kicker}</p>
-        <div className="intro-head-row">
+        <div className="cargo-deck-mast-grid">
           <h1>{heading}</h1>
-          <div className="prose">
+          <div className="cargo-deck-lede">
             <p>{intro}</p>
             <p className="book-count">{items.length} commodities on the book</p>
           </div>
         </div>
       </header>
 
-      <ol className="book-run">
-        {items.map((item) => {
+      <ul className="cargo-deck-mosaic">
+        {items.map((item, index) => {
           const src = mediaUrl(item.image, 'card')
           return (
-            <li key={item.id}>
-              <Link className="book-row" href={`/commodities/${item.slug}`}>
-                <span className="book-shot">
+            <li key={item.id} className={`cargo-tile cargo-tile-${(index % 6) + 1}`}>
+              <Link href={`/commodities/${item.slug}`}>
+                <span className="cargo-tile-media">
                   {src ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={src} alt={mediaAlt(item.image, item.name)} />
@@ -44,15 +44,15 @@ export function CargoBook({ items, kicker, heading, intro }: Props) {
                     <span className="corridor-fallback origin" />
                   )}
                 </span>
-                <span className="book-meta">
-                  <h2>{item.name}</h2>
+                <span className="cargo-tile-panel">
+                  <strong>{item.name}</strong>
                   <span>{item.tagline}</span>
                 </span>
               </Link>
             </li>
           )
         })}
-      </ol>
+      </ul>
     </section>
   )
 }
