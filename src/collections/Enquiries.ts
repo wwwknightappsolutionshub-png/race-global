@@ -32,7 +32,7 @@ export const Enquiries: CollectionConfig = {
       },
     },
     { name: 'commodityInterest', type: 'text', required: true },
-    { name: 'originPreference', type: 'text' },
+    { name: 'originPreference', type: 'text', admin: { hidden: true } },
     { name: 'volume', type: 'text' },
     { name: 'destination', type: 'text' },
     { name: 'message', type: 'textarea', required: true },

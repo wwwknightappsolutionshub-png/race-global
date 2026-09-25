@@ -9,7 +9,6 @@ type Cargo = {
   name: string
   slug: string
   tagline: string
-  originFocus: string
   image?: unknown
 }
 
@@ -93,7 +92,6 @@ export function CargoCarousel({ items, heading }: { items: Cargo[]; heading?: st
                 ) : null}
                 <span className="crate-copy">
                   <strong>{item.name}</strong>
-                  <em>{item.originFocus}</em>
                   <span>{item.tagline}</span>
                 </span>
               </Link>

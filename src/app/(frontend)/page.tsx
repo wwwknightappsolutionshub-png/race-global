@@ -16,7 +16,7 @@ export default async function HomePage() {
         kicker={copy.homeKicker || 'RGT-00 · Trade corridor'}
         line={settings.heroLine}
         cta={homeCta}
-        originSlides={heroSlides(copy.heroOriginImage, copy.heroOriginGallery, 'African origin')}
+        originSlides={heroSlides(copy.heroOriginImage, copy.heroOriginGallery, 'Agricultural supply')}
         hubSlides={heroSlides(copy.heroHubImage, copy.heroHubGallery, 'Dubai trade hub')}
       />
 
@@ -48,7 +48,7 @@ export default async function HomePage() {
           heading={copy.cargoHeading || 'Cargo on the book'}
           intro={
             copy.cargoIntro ||
-            'We specialize in the international sourcing and export of high-quality agricultural commodities from African origin through Dubai.'
+            'We specialize in the international sourcing and export of high-quality agricultural commodities through Dubai.'
           }
           items={commodities
             .filter((item) => item.featured)
@@ -57,7 +57,6 @@ export default async function HomePage() {
               name: item.name,
               slug: item.slug,
               tagline: item.tagline,
-              originFocus: item.originFocus,
               image: item.image,
             }))}
         />

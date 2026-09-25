@@ -85,10 +85,6 @@ export function EnquiryForm({ commodities, turnstileSiteKey }: Props) {
           </select>
         </label>
         <label>
-          Origin preference
-          <input name="originPreference" placeholder="Nigeria, Kenya…" maxLength={200} />
-        </label>
-        <label>
           Volume
           <input name="volume" placeholder="e.g. 2 × 20ft / monthly" maxLength={120} />
         </label>

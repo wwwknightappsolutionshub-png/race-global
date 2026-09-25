@@ -28,7 +28,7 @@ export const SiteSettings: GlobalConfig = {
               name: 'heroLine',
               type: 'text',
               required: true,
-              defaultValue: 'African origin. Dubai hub. Global delivery.',
+              defaultValue: 'Dubai hub. Global delivery.',
             },
             {
               name: 'logo',
@@ -84,14 +84,14 @@ export const SiteSettings: GlobalConfig = {
             {
               name: 'seoTitle',
               type: 'text',
-              defaultValue: 'Race General Trading LLC | African commodities from Dubai',
+              defaultValue: 'Race General Trading LLC | Agricultural commodities from Dubai',
               admin: { description: 'Default site title when a page has no SEO title.' },
             },
             {
               name: 'seoDescription',
               type: 'textarea',
               defaultValue:
-                'Dubai-based Race General Trading LLC sources, exports, and supplies premium African agricultural commodities to buyers in the Middle East, Asia, and Europe.',
+                'Dubai-based Race General Trading LLC sources, exports, and supplies premium agricultural commodities to buyers in the Middle East, Asia, and Europe.',
               admin: { description: 'Default meta description when a page has no SEO description.' },
             },
             {

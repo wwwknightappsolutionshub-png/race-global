@@ -39,7 +39,6 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
   const emailRaw = String(formData.get('email') || '').trim()
   const phoneRaw = String(formData.get('phone') || '').trim()
   const commodityInterest = String(formData.get('commodityInterest') || '').trim()
-  const originPreference = String(formData.get('originPreference') || '').trim()
   const volume = String(formData.get('volume') || '').trim()
   const destination = String(formData.get('destination') || '').trim()
   const message = String(formData.get('message') || '').trim()
@@ -98,7 +97,7 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
       phone: phoneRaw,
       phoneNormalized: phoneCheck.e164,
       commodityInterest,
-      originPreference,
+      originPreference: '',
       volume,
       destination,
       message,
@@ -128,7 +127,6 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
         email,
         phone: phoneCheck.e164,
         commodityInterest,
-        originPreference,
         volume,
         destination,
         message,

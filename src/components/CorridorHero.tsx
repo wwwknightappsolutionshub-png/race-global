@@ -12,7 +12,7 @@ type Props = {
 export function CorridorHero({ kicker, line, cta, originSlides, hubSlides }: Props) {
   return (
     <section className="corridor">
-      <HeroFade slides={originSlides} stamp="Origin" fallback="origin" interval={5600} delay={0} />
+      <HeroFade slides={originSlides} stamp="Supply" fallback="origin" interval={5600} delay={0} />
       <div className="corridor-seam">
         <p className="corridor-kicker">{kicker}</p>
         <h1>{line}</h1>

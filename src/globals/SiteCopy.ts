@@ -40,13 +40,13 @@ export const SiteCopy: GlobalConfig = {
               name: 'cargoIntro',
               type: 'textarea',
               defaultValue:
-                'We specialize in the international sourcing and export of high-quality agricultural commodities from African origin through Dubai.',
+                'We specialize in the international sourcing and export of high-quality agricultural commodities through Dubai.',
             },
             {
               name: 'heroOriginImage',
               type: 'upload',
               relationTo: 'media',
-              admin: { description: 'Left side of the homepage corridor — origin / farm.' },
+              admin: { description: 'Left side of the homepage corridor — supply / farm.' },
             },
             {
               name: 'heroHubImage',
@@ -57,9 +57,9 @@ export const SiteCopy: GlobalConfig = {
             {
               name: 'heroOriginGallery',
               type: 'array',
-              labels: { singular: 'Origin slide', plural: 'Origin slides (fade)' },
+              labels: { singular: 'Supply slide', plural: 'Supply slides (fade)' },
               admin: {
-                description: 'Extra origin photos. The main origin image plus these fade in and out.',
+                description: 'Extra supply-side photos. The main supply image plus these fade in and out.',
               },
               fields: [
                 {
@@ -97,7 +97,7 @@ export const SiteCopy: GlobalConfig = {
               name: 'aboutBody',
               type: 'textarea',
               defaultValue:
-                "Built on integrity, reliability, and long-term partnerships, we specialize in sourcing, exporting, and supplying premium agricultural commodities directly from trusted producers across Nigeria, Kenya, Egypt, Rwanda, and other strategic African markets.\n\nOur extensive supplier network, rigorous quality standards, and efficient logistics enable us to deliver products that consistently meet international specifications. More than a trading company, we are a dependable sourcing partner committed to helping businesses secure high-quality agricultural products with confidence.\n\nAt Race General Trading, we don't simply move products — we create lasting business relationships built on trust, transparency, and value.",
+                "Built on integrity, reliability, and long-term partnerships, we specialize in sourcing, exporting, and supplying premium agricultural commodities directly from trusted producers and certified suppliers.\n\nOur extensive supplier network, rigorous quality standards, and efficient logistics enable us to deliver products that consistently meet international specifications. More than a trading company, we are a dependable sourcing partner committed to helping businesses secure high-quality agricultural products with confidence.\n\nAt Race General Trading, we don't simply move products — we create lasting business relationships built on trust, transparency, and value.",
             },
             { name: 'aboutImage', type: 'upload', relationTo: 'media' },
           ],
@@ -110,7 +110,7 @@ export const SiteCopy: GlobalConfig = {
               name: 'workIntro',
               type: 'textarea',
               defaultValue:
-                'Race General Trading delivers end-to-end agricultural commodity trading solutions, connecting African producers with international buyers through a reliable and efficient supply chain. From sourcing to export documentation and logistics coordination, we manage every stage so clients receive quality products on schedule and at competitive market prices.',
+                'Race General Trading delivers end-to-end agricultural commodity trading solutions, connecting producers with international buyers through a reliable and efficient supply chain. From sourcing to export documentation and logistics coordination, we manage every stage so clients receive quality products on schedule and at competitive market prices.',
             },
             {
               name: 'sourcingTitle',
@@ -121,7 +121,7 @@ export const SiteCopy: GlobalConfig = {
               name: 'sourcingBody',
               type: 'textarea',
               defaultValue:
-                'We source premium agricultural commodities directly from carefully selected farms, cooperatives, and certified suppliers across Africa, ensuring consistent quality and competitive pricing.',
+                'We source premium agricultural commodities directly from carefully selected farms, cooperatives, and certified suppliers, ensuring consistent quality and competitive pricing.',
             },
             {
               name: 'exportTitle',
@@ -132,7 +132,7 @@ export const SiteCopy: GlobalConfig = {
               name: 'exportBody',
               type: 'textarea',
               defaultValue:
-                'We manage export documentation, quality inspections, packaging, logistics coordination, customs compliance, and international shipping to ensure smooth delivery from origin to destination.',
+                'We manage export documentation, quality inspections, packaging, logistics coordination, customs compliance, and international shipping to ensure smooth delivery from supply to destination.',
             },
             { name: 'sourcingImage', type: 'upload', relationTo: 'media' },
             { name: 'exportImage', type: 'upload', relationTo: 'media' },
@@ -172,7 +172,7 @@ export const SiteCopy: GlobalConfig = {
               name: 'contactBody',
               type: 'textarea',
               defaultValue:
-                "Whether you're looking for a dependable supplier, consistent product quality, or a trusted sourcing partner across Africa, Race General Trading is ready to support your business. Get in touch today to discuss your sourcing requirements.",
+                "Whether you're looking for a dependable supplier, consistent product quality, or a trusted sourcing partner, Race General Trading is ready to support your business. Get in touch today to discuss your sourcing requirements.",
             },
           ],
         },

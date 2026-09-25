@@ -6,7 +6,6 @@ export type EnquiryMailPayload = {
   email: string
   phone: string
   commodityInterest: string
-  originPreference: string
   volume: string
   destination: string
   message: string
@@ -60,7 +59,6 @@ export async function sendEnquiryNotification(
     `Email: ${enquiry.email}`,
     `Phone: ${enquiry.phone || '—'}`,
     `Commodity: ${enquiry.commodityInterest}`,
-    `Origin: ${enquiry.originPreference || '—'}`,
     `Volume: ${enquiry.volume || '—'}`,
     `Destination: ${enquiry.destination || '—'}`,
     '',

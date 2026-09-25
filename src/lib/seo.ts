@@ -97,11 +97,11 @@ export function siteSeoContext(settings: {
     siteName: settings.shortName || settings.legalName || 'Race General Trading',
     defaultTitle:
       settings.seoTitle ||
-      `${settings.legalName || 'Race General Trading LLC'} | African commodities from Dubai`,
+      `${settings.legalName || 'Race General Trading LLC'} | Agricultural commodities from Dubai`,
     defaultDescription:
       settings.seoDescription ||
       settings.tagline ||
-      'African origin. Dubai hub. Global delivery.',
+      'Dubai hub. Global delivery.',
     defaultOgImage: settings.defaultOgImage,
   }
 }

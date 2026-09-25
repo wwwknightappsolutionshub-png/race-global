@@ -56,10 +56,7 @@ export default async function CommodityPage({ params }: Args) {
     <DossierFrame
       kicker={`RGT-CARGO · ${cargo.slug}`}
       title={cargo.name}
-      facts={[
-        { label: 'Origin focus', value: cargo.originFocus },
-        { label: 'Tagline', value: cargo.tagline },
-      ]}
+      facts={[{ label: 'Tagline', value: cargo.tagline }]}
       cta={`Enquire on ${cargo.name}`}
     >
       {photo ? (
@@ -89,7 +86,6 @@ export default async function CommodityPage({ params }: Args) {
             name: item.name,
             slug: item.slug,
             tagline: item.tagline,
-            originFocus: item.originFocus,
             image: item.image,
           }))}
         />

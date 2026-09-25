@@ -218,9 +218,9 @@ export interface Commodity {
   slug: string;
   tagline: string;
   /**
-   * Short origin line shown on the cargo wall, e.g. Nigeria · Kenya
+   * Deprecated field — no longer shown on the public site.
    */
-  originFocus: string;
+  originFocus?: string | null;
   image: number | Media;
   body: string;
   specs?:

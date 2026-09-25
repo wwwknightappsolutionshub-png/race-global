@@ -1,6 +1,6 @@
 # Race General Trading LLC
 
-Public website and CMS for Race General Trading LLC — a Dubai-based agricultural commodity trader connecting African origins with buyers in the Middle East, Asia, and Europe.
+Public website and CMS for Race General Trading LLC — a Dubai-based agricultural commodity trader connecting producers with buyers in the Middle East, Asia, and Europe.
 
 This project is standalone. It is not part of KhayaOS.
 

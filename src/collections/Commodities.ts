@@ -8,7 +8,7 @@ export const Commodities: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['name', 'originFocus', 'featured', 'order'],
+    defaultColumns: ['name', 'featured', 'order'],
     description: 'Cargo dossiers shown on the public site. Add, hide, or reorder at any time.',
   },
   access: {
@@ -37,11 +37,12 @@ export const Commodities: CollectionConfig = {
     },
     {
       name: 'originFocus',
-      label: 'Origin focus',
+      label: 'Origin focus (unused on site)',
       type: 'text',
-      required: true,
+      required: false,
       admin: {
-        description: 'Short origin line shown on the cargo wall, e.g. Nigeria · Kenya',
+        description: 'Deprecated — no longer shown on the public site. Leave blank.',
+        condition: () => false,
       },
     },
     {

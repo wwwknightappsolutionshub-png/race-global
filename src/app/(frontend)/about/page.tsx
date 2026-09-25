@@ -29,12 +29,12 @@ export default async function AboutPage() {
       facts={[
         { label: 'Legal name', value: settings.legalName },
         { label: 'Desk', value: settings.address },
-        { label: 'Origins', value: 'Nigeria · Kenya · Egypt · Rwanda' },
+        { label: 'Hub', value: 'Dubai, UAE' },
       ]}
     >
       {photo ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img className="dossier-photo" src={photo} alt={mediaAlt(copy.aboutImage, 'Origin agriculture')} />
+        <img className="dossier-photo" src={photo} alt={mediaAlt(copy.aboutImage, 'Agricultural supply')} />
       ) : null}
       <div className="prose">
         {splitParagraphs(copy.aboutBody).map((paragraph) => (

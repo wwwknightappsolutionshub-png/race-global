@@ -61,7 +61,7 @@ const IMAGE_SOURCES: { key: string; file: string; alt: string; url: string }[] =
   {
     key: 'origin',
     file: 'origin.jpg',
-    alt: 'African agricultural fields at origin',
+    alt: 'Agricultural fields and crops',
     url: 'https://images.pexels.com/photos/265216/pexels-photo-265216.jpeg?auto=compress&cs=tinysrgb&w=1600',
   },
   {
@@ -73,13 +73,13 @@ const IMAGE_SOURCES: { key: string; file: string; alt: string; url: string }[] =
   {
     key: 'origin2',
     file: 'origin2.jpg',
-    alt: 'Harvested crops at African origin',
+    alt: 'Harvested crops ready for export',
     url: 'https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg?auto=compress&cs=tinysrgb&w=1600',
   },
   {
     key: 'origin3',
     file: 'origin3.jpg',
-    alt: 'Grain fields at origin',
+    alt: 'Grain fields for commodity programmes',
     url: 'https://images.pexels.com/photos/326082/pexels-photo-326082.jpeg?auto=compress&cs=tinysrgb&w=1600',
   },
   {
@@ -101,12 +101,11 @@ const COMMODITIES = [
     name: 'Avocado',
     slug: 'avocado',
     imageKey: 'avocado',
-    tagline: 'Export-grade fruit from East African highlands.',
-    originFocus: 'Kenya · Rwanda',
+    tagline: 'Export-grade fruit for fresh and ripener programmes.',
+    originFocus: '',
     order: 10,
-    body: 'We source premium avocados from selected farms and packhouses in Kenya and Rwanda, coordinating harvest windows, cold chain, and export documentation so buyers receive consistent, specification-grade fruit.',
+    body: 'We source premium avocados from selected farms and packhouses, coordinating harvest windows, cold chain, and export documentation so buyers receive consistent, specification-grade fruit.',
     specs: [
-      { label: 'Typical origin', value: 'Kenya, Rwanda' },
       { label: 'Form', value: 'Fresh Hass and export varieties' },
       { label: 'Buyers', value: 'Importers, wholesalers, ripeners' },
     ],
@@ -116,11 +115,10 @@ const COMMODITIES = [
     slug: 'citrus',
     imageKey: 'citrus',
     tagline: 'Oranges, lemons and limes for juice and fresh markets.',
-    originFocus: 'Egypt · Africa',
+    originFocus: '',
     order: 20,
-    body: 'Race General Trading supplies citrus programmes from North African and wider African origins, matching variety, size, and packing to importer specifications for fresh and processing channels.',
+    body: 'Race General Trading supplies citrus programmes matched to variety, size, and packing specifications for fresh and processing channels.',
     specs: [
-      { label: 'Typical origin', value: 'Egypt and other African origins' },
       { label: 'Form', value: 'Fresh citrus — orange, lemon, lime' },
       { label: 'Buyers', value: 'Importers, juice processors, distributors' },
     ],
@@ -129,12 +127,11 @@ const COMMODITIES = [
     name: 'Habanero chilli',
     slug: 'habanero-chilli',
     imageKey: 'habanero',
-    tagline: 'High-heat chilli from West African growers.',
-    originFocus: 'Nigeria',
+    tagline: 'High-heat chilli for fresh and dried programmes.',
+    originFocus: '',
     order: 30,
-    body: 'We work with trusted Nigerian suppliers of habanero chilli for fresh and dried programmes, with quality checks on colour, moisture, and packing before export from origin through Dubai.',
+    body: 'We work with trusted suppliers of habanero chilli for fresh and dried programmes, with quality checks on colour, moisture, and packing before export through Dubai.',
     specs: [
-      { label: 'Typical origin', value: 'Nigeria' },
       { label: 'Form', value: 'Fresh or dried, as specified' },
       { label: 'Buyers', value: 'Spice houses, wholesalers, manufacturers' },
     ],
@@ -143,12 +140,11 @@ const COMMODITIES = [
     name: 'Coffee Beans',
     slug: 'coffee-beans',
     imageKey: 'coffee',
-    tagline: 'Arabica lots from East African origins.',
-    originFocus: 'Kenya · Rwanda',
+    tagline: 'Arabica lots for roasters and importers.',
+    originFocus: '',
     order: 40,
-    body: 'We source green coffee beans from Kenya, Rwanda, and other African origins, working with cooperatives and certified lots so roasters and importers can lock consistent cup profiles and volumes.',
+    body: 'We source green coffee beans from cooperatives and certified lots so roasters and importers can lock consistent cup profiles and volumes.',
     specs: [
-      { label: 'Typical origin', value: 'Kenya, Rwanda' },
       { label: 'Form', value: 'Green coffee beans' },
       { label: 'Buyers', value: 'Importers, roasters, distributors' },
     ],
@@ -158,11 +154,10 @@ const COMMODITIES = [
     slug: 'herbs',
     imageKey: 'herbs',
     tagline: 'Culinary herbs for wholesale and food manufacturing.',
-    originFocus: 'Egypt · Kenya · Africa',
+    originFocus: '',
     order: 50,
-    body: 'Fresh and dried culinary herbs are sourced from African growers and packed to buyer specification — from rosemary and thyme through other contracted herbs — with inspection before shipment.',
+    body: 'Fresh and dried culinary herbs are sourced from selected growers and packed to buyer specification — from rosemary and thyme through other contracted herbs — with inspection before shipment.',
     specs: [
-      { label: 'Typical origin', value: 'Egypt, Kenya, other African origins' },
       { label: 'Form', value: 'Fresh packed or dried' },
       { label: 'Buyers', value: 'Wholesalers, food manufacturers' },
     ],
@@ -172,11 +167,10 @@ const COMMODITIES = [
     slug: 'maize-flours',
     imageKey: 'maize',
     tagline: 'Milled maize for food and industrial buyers.',
-    originFocus: 'Nigeria · Kenya · Africa',
+    originFocus: '',
     order: 60,
-    body: 'Maize flour programmes are built from African grain origins with milling, packing, and moisture specifications agreed in advance so food manufacturers and distributors receive a stable, exportable product.',
+    body: 'Maize flour programmes are built with milling, packing, and moisture specifications agreed in advance so food manufacturers and distributors receive a stable, exportable product.',
     specs: [
-      { label: 'Typical origin', value: 'Nigeria, Kenya, other African origins' },
       { label: 'Form', value: 'Maize flour / meal, packed to spec' },
       { label: 'Buyers', value: 'Manufacturers, wholesalers, distributors' },
     ],
@@ -185,12 +179,11 @@ const COMMODITIES = [
     name: 'Cassava flours',
     slug: 'cassava-flours',
     imageKey: 'cassava',
-    tagline: 'Cassava flour from West and East African processors.',
-    originFocus: 'Nigeria · Africa',
+    tagline: 'Cassava flour for food manufacturers and wholesalers.',
+    originFocus: '',
     order: 70,
-    body: 'We source cassava flour from selected African processors, aligning starch profile, granulation, and packaging with importer requirements and coordinating export documentation from origin.',
+    body: 'We source cassava flour from selected processors, aligning starch profile, granulation, and packaging with importer requirements and coordinating export documentation.',
     specs: [
-      { label: 'Typical origin', value: 'Nigeria and other African origins' },
       { label: 'Form', value: 'Cassava flour, packed to spec' },
       { label: 'Buyers', value: 'Food manufacturers, wholesalers' },
     ],
@@ -200,11 +193,10 @@ const COMMODITIES = [
     slug: 'beans',
     imageKey: 'beans',
     tagline: 'Pulses and beans for food service and packing.',
-    originFocus: 'Egypt · Kenya · Africa',
+    originFocus: '',
     order: 80,
-    body: 'Beans and related pulses are sourced from African origins against grade, size, and moisture specifications, with quality inspection and export paperwork handled as part of the corridor from farm to destination.',
+    body: 'Beans and related pulses are sourced against grade, size, and moisture specifications, with quality inspection and export paperwork handled as part of the corridor from supply to destination.',
     specs: [
-      { label: 'Typical origin', value: 'Egypt, Kenya, other African origins' },
       { label: 'Form', value: 'Dried beans, graded and packed' },
       { label: 'Buyers', value: 'Importers, wholesalers, packers' },
     ],
@@ -283,6 +275,7 @@ export async function seedIfEmpty(payload: Payload) {
   const missingCargos = COMMODITIES.filter((cargo) => !existingSlugs.has(cargo.slug))
   if (existing.totalDocs > 0 && missingCargos.length === 0) {
     await ensureHeroGallery(payload)
+    await syncPublicMessaging(payload)
     return
   }
 
@@ -318,7 +311,7 @@ export async function seedIfEmpty(payload: Payload) {
       legalName: 'Race General Trading LLC',
       shortName: 'Race General Trading',
       tagline: 'Import · Export · Quality · Trust',
-      heroLine: 'African origin. Dubai hub. Global delivery.',
+      heroLine: 'Dubai hub. Global delivery.',
       phone: '+971 58 844 8307',
       email: 'contact@racegentrade.com',
       website: 'www.racegentrade.com',
@@ -327,9 +320,9 @@ export async function seedIfEmpty(payload: Payload) {
       facebook: 'https://www.facebook.com/racegentrade',
       twitter: 'https://twitter.com/racegentrade',
       siteUrl: 'https://racegeneraltrading.com',
-      seoTitle: 'Race General Trading LLC | African commodities from Dubai',
+      seoTitle: 'Race General Trading LLC | Agricultural commodities from Dubai',
       seoDescription:
-        'Dubai-based Race General Trading LLC sources, exports, and supplies premium African agricultural commodities to buyers in the Middle East, Asia, and Europe.',
+        'Dubai-based Race General Trading LLC sources, exports, and supplies premium agricultural commodities to buyers in the Middle East, Asia, and Europe.',
       robotsAllowIndexing: true,
       defaultOgImage: media.hub,
     },
@@ -341,12 +334,12 @@ export async function seedIfEmpty(payload: Payload) {
     data: {
       homeKicker: 'RGT-00 · Trade corridor',
       homeIntro:
-        "Race General Trading LLC is a Dubai-based international commodity trading company connecting Africa's agricultural resources with buyers across the Middle East, Asia, Europe, and other global markets.",
+        'Race General Trading LLC is a Dubai-based international commodity trading company connecting agricultural producers with buyers across the Middle East, Asia, Europe, and other global markets.',
       homeCta: 'Contact us',
       cargoKicker: 'Cargo',
       cargoHeading: 'Cargo on the book',
       cargoIntro:
-        'We specialize in the international sourcing and export of high-quality agricultural commodities from African origin through Dubai.',
+        'We specialize in the international sourcing and export of high-quality agricultural commodities through Dubai.',
       heroOriginImage: media.origin,
       heroHubImage: media.hub,
       heroOriginGallery: gallery(media.origin2, media.origin3),
@@ -354,17 +347,17 @@ export async function seedIfEmpty(payload: Payload) {
       aboutKicker: 'RGT-01 · Company dossier',
       aboutHeading: 'A sourcing partner, not a one-off shipment.',
       aboutBody:
-        "Built on integrity, reliability, and long-term partnerships, we specialize in sourcing, exporting, and supplying premium agricultural commodities directly from trusted producers across Nigeria, Kenya, Egypt, Rwanda, and other strategic African markets.\n\nOur extensive supplier network, rigorous quality standards, and efficient logistics enable us to deliver products that consistently meet international specifications. More than a trading company, we are a dependable sourcing partner committed to helping businesses secure high-quality agricultural products with confidence.\n\nAt Race General Trading, we don't simply move products — we create lasting business relationships built on trust, transparency, and value.",
+        "Built on integrity, reliability, and long-term partnerships, we specialize in sourcing, exporting, and supplying premium agricultural commodities directly from trusted producers and certified suppliers.\n\nOur extensive supplier network, rigorous quality standards, and efficient logistics enable us to deliver products that consistently meet international specifications. More than a trading company, we are a dependable sourcing partner committed to helping businesses secure high-quality agricultural products with confidence.\n\nAt Race General Trading, we don't simply move products — we create lasting business relationships built on trust, transparency, and value.",
       aboutImage: media.origin,
       workKicker: 'RGT-02 · Scope of work',
       workIntro:
-        'Race General Trading delivers end-to-end agricultural commodity trading solutions, connecting African producers with international buyers through a reliable and efficient supply chain. From sourcing to export documentation and logistics coordination, we manage every stage so clients receive quality products on schedule and at competitive market prices.',
+        'Race General Trading delivers end-to-end agricultural commodity trading solutions, connecting producers with international buyers through a reliable and efficient supply chain. From sourcing to export documentation and logistics coordination, we manage every stage so clients receive quality products on schedule and at competitive market prices.',
       sourcingTitle: 'Agricultural commodity sourcing',
       sourcingBody:
-        'We source premium agricultural commodities directly from carefully selected farms, cooperatives, and certified suppliers across Africa, ensuring consistent quality and competitive pricing.',
+        'We source premium agricultural commodities directly from carefully selected farms, cooperatives, and certified suppliers, ensuring consistent quality and competitive pricing.',
       exportTitle: 'Export & supply chain management',
       exportBody:
-        'We manage export documentation, quality inspections, packaging, logistics coordination, customs compliance, and international shipping to ensure smooth delivery from origin to destination.',
+        'We manage export documentation, quality inspections, packaging, logistics coordination, customs compliance, and international shipping to ensure smooth delivery from supply to destination.',
       sourcingImage: media.origin,
       exportImage: media.hub,
       processKicker: 'RGT-04 · Why our process works',
@@ -395,13 +388,13 @@ export async function seedIfEmpty(payload: Payload) {
       contactKicker: 'RGT-05 · Open a trade file',
       contactHeading: "Let's build lasting trade partnerships.",
       contactBody:
-        "Whether you're looking for a dependable supplier, consistent product quality, or a trusted sourcing partner across Africa, Race General Trading is ready to support your business. Get in touch today to discuss your sourcing requirements.",
+        "Whether you're looking for a dependable supplier, consistent product quality, or a trusted sourcing partner, Race General Trading is ready to support your business. Get in touch today to discuss your sourcing requirements.",
       privacyBody:
         'Race General Trading LLC collects only the information you submit through our enquiry form — company details, contact data, and sourcing requirements — so we can respond to your request. We do not sell personal data. To update or remove an enquiry, email contact@racegentrade.com.',
       homeSeo: {
-        title: 'Race General Trading LLC | African commodities from Dubai',
+        title: 'Race General Trading LLC | Agricultural commodities from Dubai',
         description:
-          "Dubai-based Race General Trading LLC sources, exports, and supplies premium African agricultural commodities to buyers in the Middle East, Asia, and Europe.",
+          'Dubai-based Race General Trading LLC sources, exports, and supplies premium agricultural commodities to buyers in the Middle East, Asia, and Europe.',
       },
       aboutSeo: {
         title: 'About | Race General Trading LLC',
@@ -410,12 +403,12 @@ export async function seedIfEmpty(payload: Payload) {
       workSeo: {
         title: 'What we do | Race General Trading LLC',
         description:
-          'End-to-end agricultural commodity sourcing and export supply chain management from African origin through Dubai.',
+          'End-to-end agricultural commodity sourcing and export supply chain management through Dubai.',
       },
       commoditiesSeo: {
         title: 'Commodities | Race General Trading LLC',
         description:
-          'Avocado, citrus, habanero, coffee, herbs, maize flour, cassava flour, and beans sourced from trusted African origins.',
+          'Avocado, citrus, habanero, coffee, herbs, maize flour, cassava flour, and beans sourced for international buyers.',
       },
       processSeo: {
         title: 'Process | Race General Trading LLC',
@@ -473,7 +466,7 @@ export async function seedIfEmpty(payload: Payload) {
   const gates = [
     {
       label: 'Client inquiry',
-      body: 'Tell us the commodity, volume, destination, and specification. We open a trade file and respond with origin options.',
+      body: 'Tell us the commodity, volume, destination, and specification. We open a trade file and respond with programme options.',
     },
     {
       label: 'Product specification',
@@ -481,15 +474,15 @@ export async function seedIfEmpty(payload: Payload) {
     },
     {
       label: 'Supplier selection',
-      body: 'We nominate farms, cooperatives, or certified processors from our African network who can meet the spec and calendar.',
+      body: 'We nominate farms, cooperatives, or certified processors from our network who can meet the spec and calendar.',
     },
     {
       label: 'Price confirmation',
-      body: 'Origin price, logistics, and Incoterms are confirmed in writing before cargo is committed.',
+      body: 'Supply price, logistics, and Incoterms are confirmed in writing before cargo is committed.',
     },
     {
       label: 'Quality inspection',
-      body: 'Lots are verified against the agreed specification before they leave origin.',
+      body: 'Lots are verified against the agreed specification before they leave the supply point.',
     },
     {
       label: 'Export documentation',
@@ -497,7 +490,7 @@ export async function seedIfEmpty(payload: Payload) {
     },
     {
       label: 'Shipment & logistics',
-      body: 'Freight and routing are arranged from African origin through Dubai and onward to destination.',
+      body: 'Freight and routing are arranged through Dubai and onward to destination.',
     },
     {
       label: 'Delivery support',
@@ -514,10 +507,10 @@ export async function seedIfEmpty(payload: Payload) {
   }
 
   const corridor = [
-    { name: 'Nigeria', role: 'origin' as const, region: 'West Africa', order: 10 },
-    { name: 'Kenya', role: 'origin' as const, region: 'East Africa', order: 20 },
-    { name: 'Egypt', role: 'origin' as const, region: 'North Africa', order: 30 },
-    { name: 'Rwanda', role: 'origin' as const, region: 'East Africa', order: 40 },
+    { name: 'Trusted farms', role: 'origin' as const, region: 'Supply', order: 10 },
+    { name: 'Cooperatives', role: 'origin' as const, region: 'Supply', order: 20 },
+    { name: 'Packhouses', role: 'origin' as const, region: 'Supply', order: 30 },
+    { name: 'Processors', role: 'origin' as const, region: 'Supply', order: 40 },
     { name: 'Dubai', role: 'hub' as const, region: 'United Arab Emirates', order: 50 },
     { name: 'Middle East', role: 'destination' as const, region: 'Destination', order: 60 },
     { name: 'Asia', role: 'destination' as const, region: 'Destination', order: 70 },
@@ -546,7 +539,7 @@ export async function seedIfEmpty(payload: Payload) {
         name: cargo.name,
         slug: cargo.slug,
         tagline: cargo.tagline,
-        originFocus: cargo.originFocus,
+        originFocus: cargo.originFocus || '',
         body: cargo.body,
         specs: cargo.specs,
         featured: true,
@@ -559,11 +552,150 @@ export async function seedIfEmpty(payload: Payload) {
     })
   }
 
+  await syncPublicMessaging(payload)
   payload.logger.info('Seed complete.')
 }
 
 function gallery(...ids: Array<number | undefined>) {
   return ids.filter((id): id is number => typeof id === 'number').map((image) => ({ image }))
+}
+
+/** Clears country/origin marketing copy on existing CMS rows (safe to re-run). */
+export async function syncPublicMessaging(payload: Payload) {
+  payload.logger.info('Syncing public copy without origin/country language…')
+
+  for (const cargo of COMMODITIES) {
+    const found = await payload.find({
+      collection: 'commodities',
+      where: { slug: { equals: cargo.slug } },
+      limit: 1,
+      overrideAccess: true,
+    })
+    const doc = found.docs[0]
+    if (!doc) continue
+
+    await payload.update({
+      collection: 'commodities',
+      id: doc.id,
+      data: {
+        tagline: cargo.tagline,
+        originFocus: '',
+        body: cargo.body,
+        specs: cargo.specs,
+        seoDescription: cargo.tagline,
+      },
+      overrideAccess: true,
+    })
+  }
+
+  await payload.updateGlobal({
+    slug: 'site-settings',
+    data: {
+      heroLine: 'Dubai hub. Global delivery.',
+      seoTitle: 'Race General Trading LLC | Agricultural commodities from Dubai',
+      seoDescription:
+        'Dubai-based Race General Trading LLC sources, exports, and supplies premium agricultural commodities to buyers in the Middle East, Asia, and Europe.',
+    },
+    overrideAccess: true,
+  })
+
+  await payload.updateGlobal({
+    slug: 'site-copy',
+    data: {
+      homeIntro:
+        'Race General Trading LLC is a Dubai-based international commodity trading company connecting agricultural producers with buyers across the Middle East, Asia, Europe, and other global markets.',
+      cargoIntro:
+        'We specialize in the international sourcing and export of high-quality agricultural commodities through Dubai.',
+      aboutBody:
+        "Built on integrity, reliability, and long-term partnerships, we specialize in sourcing, exporting, and supplying premium agricultural commodities directly from trusted producers and certified suppliers.\n\nOur extensive supplier network, rigorous quality standards, and efficient logistics enable us to deliver products that consistently meet international specifications. More than a trading company, we are a dependable sourcing partner committed to helping businesses secure high-quality agricultural products with confidence.\n\nAt Race General Trading, we don't simply move products — we create lasting business relationships built on trust, transparency, and value.",
+      workIntro:
+        'Race General Trading delivers end-to-end agricultural commodity trading solutions, connecting producers with international buyers through a reliable and efficient supply chain. From sourcing to export documentation and logistics coordination, we manage every stage so clients receive quality products on schedule and at competitive market prices.',
+      sourcingBody:
+        'We source premium agricultural commodities directly from carefully selected farms, cooperatives, and certified suppliers, ensuring consistent quality and competitive pricing.',
+      exportBody:
+        'We manage export documentation, quality inspections, packaging, logistics coordination, customs compliance, and international shipping to ensure smooth delivery from supply to destination.',
+      contactBody:
+        "Whether you're looking for a dependable supplier, consistent product quality, or a trusted sourcing partner, Race General Trading is ready to support your business. Get in touch today to discuss your sourcing requirements.",
+      homeSeo: {
+        title: 'Race General Trading LLC | Agricultural commodities from Dubai',
+        description:
+          'Dubai-based Race General Trading LLC sources, exports, and supplies premium agricultural commodities to buyers in the Middle East, Asia, and Europe.',
+      },
+      workSeo: {
+        title: 'What we do | Race General Trading LLC',
+        description:
+          'End-to-end agricultural commodity sourcing and export supply chain management through Dubai.',
+      },
+      commoditiesSeo: {
+        title: 'Commodities | Race General Trading LLC',
+        description:
+          'Avocado, citrus, habanero, coffee, herbs, maize flour, cassava flour, and beans sourced for international buyers.',
+      },
+    },
+    overrideAccess: true,
+  })
+
+  const gateUpdates: Record<string, string> = {
+    'Client inquiry':
+      'Tell us the commodity, volume, destination, and specification. We open a trade file and respond with programme options.',
+    'Supplier selection':
+      'We nominate farms, cooperatives, or certified processors from our network who can meet the spec and calendar.',
+    'Price confirmation':
+      'Supply price, logistics, and Incoterms are confirmed in writing before cargo is committed.',
+    'Quality inspection':
+      'Lots are verified against the agreed specification before they leave the supply point.',
+    'Shipment & logistics':
+      'Freight and routing are arranged through Dubai and onward to destination.',
+  }
+
+  const gates = await payload.find({
+    collection: 'process-gates',
+    limit: 50,
+    overrideAccess: true,
+  })
+  for (const gate of gates.docs) {
+    const body = gateUpdates[gate.label]
+    if (!body) continue
+    await payload.update({
+      collection: 'process-gates',
+      id: gate.id,
+      data: { body },
+      overrideAccess: true,
+    })
+  }
+
+  const desiredCorridor = [
+    { name: 'Trusted farms', role: 'origin' as const, region: 'Supply', order: 10 },
+    { name: 'Cooperatives', role: 'origin' as const, region: 'Supply', order: 20 },
+    { name: 'Packhouses', role: 'origin' as const, region: 'Supply', order: 30 },
+    { name: 'Processors', role: 'origin' as const, region: 'Supply', order: 40 },
+    { name: 'Dubai', role: 'hub' as const, region: 'United Arab Emirates', order: 50 },
+    { name: 'Middle East', role: 'destination' as const, region: 'Destination', order: 60 },
+    { name: 'Asia', role: 'destination' as const, region: 'Destination', order: 70 },
+    { name: 'Europe', role: 'destination' as const, region: 'Destination', order: 80 },
+  ]
+
+  const existingCorridor = await payload.find({
+    collection: 'corridors',
+    limit: 100,
+    overrideAccess: true,
+  })
+  for (const point of existingCorridor.docs) {
+    await payload.delete({
+      collection: 'corridors',
+      id: point.id,
+      overrideAccess: true,
+    })
+  }
+  for (const point of desiredCorridor) {
+    await payload.create({
+      collection: 'corridors',
+      data: point,
+      overrideAccess: true,
+    })
+  }
+
+  payload.logger.info('Public messaging sync complete.')
 }
 
 async function ensureHeroGallery(payload: Payload) {

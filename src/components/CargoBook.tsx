@@ -6,7 +6,6 @@ type Cargo = {
   name: string
   slug: string
   tagline: string
-  originFocus: string
   image?: unknown
 }
 
@@ -48,7 +47,6 @@ export function CargoBook({ items, kicker, heading, intro }: Props) {
                 </span>
                 <span className="book-meta">
                   <h2>{item.name}</h2>
-                  <em>{item.originFocus}</em>
                   <span>{item.tagline}</span>
                 </span>
                 <span className="book-open">Open dossier</span>

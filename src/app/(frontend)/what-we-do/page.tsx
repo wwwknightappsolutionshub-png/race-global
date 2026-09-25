@@ -24,7 +24,7 @@ export default async function WhatWeDoPage() {
   return (
     <DossierFrame
       kicker={copy.workKicker || 'RGT-02 · Scope of work'}
-      title="From African origin to destination door."
+      title="From supply to destination door."
       facts={[
         { label: 'Workstream 01', value: copy.sourcingTitle || 'Sourcing' },
         { label: 'Workstream 02', value: copy.exportTitle || 'Export & supply chain' },
