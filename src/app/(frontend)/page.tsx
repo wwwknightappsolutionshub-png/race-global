@@ -13,7 +13,6 @@ export default async function HomePage() {
   return (
     <>
       <CorridorHero
-        kicker={copy.homeKicker || 'RGT-00 · Trade corridor'}
         line={settings.heroLine}
         cta={homeCta}
         originSlides={heroSlides(copy.heroOriginImage, copy.heroOriginGallery, 'Agricultural supply')}
