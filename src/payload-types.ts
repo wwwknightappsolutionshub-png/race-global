@@ -618,6 +618,10 @@ export interface SiteSetting {
    * Optional. Leave empty to use the built-in Concept 1 mark.
    */
   logo?: (number | null) | Media;
+  /**
+   * Browser tab icon (.ico, .png, or .svg). Square 32×32 or 512×512 PNG works well.
+   */
+  favicon?: (number | null) | Media;
   phone: string;
   email: string;
   website?: string | null;
@@ -790,6 +794,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   tagline?: T;
   heroLine?: T;
   logo?: T;
+  favicon?: T;
   phone?: T;
   email?: T;
   website?: T;

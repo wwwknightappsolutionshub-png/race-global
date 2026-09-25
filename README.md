@@ -32,7 +32,7 @@ Change this in `.env` (`SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD`) before going 
 
 From `/admin` you can edit:
 
-- **Site settings** — name, tagline, phone, email, address, logo, SEO defaults, site URL, default OG image
+- **Site settings** — name, tagline, phone, email, address, logo, favicon, SEO defaults, site URL, default OG image
 - **Page copy** — every public page’s text and hero photos, plus a dedicated **SEO** tab (title, description, OG image, noindex per page)
 - **Commodities** — add/remove cargos, photos, specs, order, and per-item SEO
 - **Values, process gates, trade corridor** — reorder or rewrite

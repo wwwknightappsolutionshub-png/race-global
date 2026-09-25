@@ -15,6 +15,7 @@ export type SiteSeoContext = {
   defaultTitle: string
   defaultDescription: string
   defaultOgImage?: unknown
+  favicon?: unknown
 }
 
 export function normalizeSiteUrl(raw?: string | null): string {
@@ -56,12 +57,20 @@ export function buildPageMetadata(args: {
     absoluteMediaUrl(site.siteUrl, site.defaultOgImage, 'banner')
   const canonicalPath = seo?.canonicalPath?.trim() || path
   const canonical = absoluteUrl(site.siteUrl, canonicalPath)
+  const favicon = absoluteMediaUrl(site.siteUrl, site.favicon)
 
   return {
     metadataBase: new URL(site.siteUrl),
     title,
     description,
     alternates: canonical ? { canonical } : undefined,
+    icons: favicon
+      ? {
+          icon: [{ url: favicon }],
+          shortcut: [{ url: favicon }],
+          apple: [{ url: favicon }],
+        }
+      : undefined,
     robots: seo?.noIndex
       ? { index: false, follow: false }
       : { index: true, follow: true },
@@ -91,6 +100,7 @@ export function siteSeoContext(settings: {
   seoDescription?: string | null
   tagline?: string | null
   defaultOgImage?: unknown
+  favicon?: unknown
 }): SiteSeoContext {
   return {
     siteUrl: normalizeSiteUrl(settings.siteUrl || settings.website),
@@ -103,6 +113,7 @@ export function siteSeoContext(settings: {
       settings.tagline ||
       'Dubai hub. Global delivery.',
     defaultOgImage: settings.defaultOgImage,
+    favicon: settings.favicon,
   }
 }
 

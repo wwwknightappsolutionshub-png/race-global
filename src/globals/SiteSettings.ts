@@ -36,6 +36,15 @@ export const SiteSettings: GlobalConfig = {
               relationTo: 'media',
               admin: { description: 'Optional. Leave empty to use the built-in Concept 1 mark.' },
             },
+            {
+              name: 'favicon',
+              type: 'upload',
+              relationTo: 'media',
+              admin: {
+                description:
+                  'Browser tab icon (.ico, .png, or .svg). Square 32×32 or 512×512 PNG works well. Upload under Media first if needed.',
+              },
+            },
           ],
         },
         {
