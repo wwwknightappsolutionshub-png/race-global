@@ -9,8 +9,8 @@ export const getCms = cache(async () => {
 export async function getSite() {
   const payload = await getCms()
   const [settings, copy, commodities, values, gates, corridor] = await Promise.all([
-    payload.findGlobal({ slug: 'site-settings' }),
-    payload.findGlobal({ slug: 'site-copy' }),
+    payload.findGlobal({ slug: 'site-settings', depth: 1 }),
+    payload.findGlobal({ slug: 'site-copy', depth: 1 }),
     payload.find({
       collection: 'commodities',
       sort: 'order',
